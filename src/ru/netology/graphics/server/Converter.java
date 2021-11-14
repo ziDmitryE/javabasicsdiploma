@@ -25,27 +25,27 @@ public class Converter implements TextGraphicsConverter {
         if (maxRatio != 0 & img.getWidth() / img.getHeight() > maxRatio) {
             throw new BadImageSizeException(img.getWidth() / img.getHeight(), maxRatio);
         }
-        int K1;
+        int k1;
         if (maxWidth != 0 & maxWidth < img.getWidth()) {
-            K1 = img.getWidth() / maxWidth;
+            k1 = img.getWidth() / maxWidth;
         } else {
-            K1 = 0;
+            k1 = 0;
         }
-        int K2;
+        int k2;
         if (maxHeight != 0 & maxHeight < img.getHeight()) {
-            K2 = img.getHeight() / maxHeight;
+            k2 = img.getHeight() / maxHeight;
         } else {
-            K2 = 0;
+            k2 = 0;
         }
         int newWidth;
         int newHeight;
-        if (K1 != 0 | K2 != 0) {
-            if (K1 >= K2) {
-                newWidth = img.getWidth() / K1;
-                newHeight = img.getHeight() / K1;
+        if (k1 != 0 | k2 != 0) {
+            if (k1 >= k2) {
+                newWidth = img.getWidth() / k1;
+                newHeight = img.getHeight() / k1;
             } else {
-                newWidth = img.getWidth() / K2;
-                newHeight = img.getHeight() / K2;
+                newWidth = img.getWidth() / k2;
+                newHeight = img.getHeight() / k2;
             }
         } else {
             newWidth = img.getWidth();
